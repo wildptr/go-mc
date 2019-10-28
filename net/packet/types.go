@@ -385,3 +385,13 @@ func (u *UUID) Decode(r DecodeReader) error {
 	_, err := io.ReadFull(r, (*u)[:])
 	return err
 }
+
+// Decode an Angle
+func (b *Angle) Decode(r DecodeReader) error {
+	v, err := r.ReadByte()
+	if err != nil {
+		return err
+	}
+	*b = Angle(v)
+	return nil
+}

@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"fmt"
 	"io/ioutil"
-
+	"github.com/google/uuid"
 	"github.com/wildptr/go-mc/bot/world"
 	"github.com/wildptr/go-mc/bot/world/entity"
 	"github.com/wildptr/go-mc/chat"
 	"github.com/wildptr/go-mc/data"
 	"github.com/wildptr/go-mc/nbt"
+	"log"
 	pk "github.com/wildptr/go-mc/net/packet"
 )
 
@@ -62,6 +63,8 @@ func (c *Client) handlePacket(p pk.Packet) (disconnect bool, err error) {
 	}
 
 	switch p.ID {
+	case data.SpawnObject:
+		err = handleSpawnObjectPacket(c, p)
 	case data.JoinGame:
 		err = handleJoinGamePacket(c, p)
 
@@ -587,4 +590,25 @@ func sendPlayerPositionAndLookPacket(c *Client) {
 		pk.Float(c.Pitch),
 		pk.Boolean(c.OnGround),
 	))
+}
+
+func handleSpawnObjectPacket(c *Client, p pk.Packet) error {
+	var (
+		entity_id pk.VarInt
+		obj_uuid pk.UUID
+		typ pk.VarInt
+		x, y, z pk.Double
+		pitch, yaw pk.Angle
+		data pk.Int
+		vx, vy, vz pk.Short
+	)
+	err := p.Scan(&entity_id, &obj_uuid, &typ, &x, &y, &z, &pitch, &yaw, &data, &vx, &vy, &vz)
+	if err != nil {
+		log.Println(p.Data)
+		return err
+	}
+	if c.Events.SpawnObject != nil {
+		err = c.Events.SpawnObject(int(entity_id), uuid.UUID(obj_uuid), int(typ), float64(x), float64(y), float64(z), int8(pitch), int8(yaw), int(data), int(vx), int(vy), int(vz))
+	}
+	return err
 }
