@@ -1,4 +1,4 @@
-module github.com/Tnze/go-mc
+module github.com/wildptr/go-mc
 
 go 1.12
 

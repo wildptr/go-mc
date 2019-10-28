@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"log"
 
-	"github.com/Tnze/go-mc/bot"
-	"github.com/Tnze/go-mc/chat"
-	_ "github.com/Tnze/go-mc/data/lang/en-us"
-	pk "github.com/Tnze/go-mc/net/packet"
+	"github.com/wildptr/go-mc/bot"
+	"github.com/wildptr/go-mc/chat"
+	_ "github.com/wildptr/go-mc/data/lang/en-us"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 func main() {

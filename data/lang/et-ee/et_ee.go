@@ -1,6 +1,6 @@
 package et_ee
 
-import "github.com/Tnze/go-mc/chat"
+import "github.com/wildptr/go-mc/chat"
 
 func init() { chat.SetLanguage(Map) }
 

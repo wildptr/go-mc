@@ -2,11 +2,11 @@ package chat_test
 
 import (
 	"bytes"
-	"github.com/Tnze/go-mc/chat"
+	"github.com/wildptr/go-mc/chat"
 	"testing"
 
-	_ "github.com/Tnze/go-mc/data/lang/en-us"
-	pk "github.com/Tnze/go-mc/net/packet"
+	_ "github.com/wildptr/go-mc/data/lang/en-us"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 /*
@@ -30,8 +30,8 @@ var jsons = []string{
 	`{"translate":"translation.test.args","with":["str1","str2"]}`,
 	`{"translate":"translation.test.world"}`,
 
-	`"Tnze"`,
-	`"§0Tnze"`,
+	`"wildptr"`,
+	`"§0wildptr"`,
 	`"§list"`,
 }
 
@@ -45,8 +45,8 @@ var texts = []string{
 	"str1 str2",
 	"world",
 
-	"Tnze",
-	"\033[30mTnze\033[0m",
+	"wildptr",
+	"\033[30mwildptr\033[0m",
 	"\033[1mist\033[0m",
 }
 
@@ -60,8 +60,8 @@ var ctexts = []string{
 	"str1 str2",
 	"world",
 
-	"Tnze",
-	"Tnze",
+	"wildptr",
+	"wildptr",
 	"ist",
 }
 

@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/Tnze/go-mc/bot/world"
-	"github.com/Tnze/go-mc/bot/world/entity"
-	"github.com/Tnze/go-mc/chat"
-	"github.com/Tnze/go-mc/data"
-	"github.com/Tnze/go-mc/nbt"
-	pk "github.com/Tnze/go-mc/net/packet"
+	"github.com/wildptr/go-mc/bot/world"
+	"github.com/wildptr/go-mc/bot/world/entity"
+	"github.com/wildptr/go-mc/chat"
+	"github.com/wildptr/go-mc/data"
+	"github.com/wildptr/go-mc/nbt"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 // //GetPosition return the player's position

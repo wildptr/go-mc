@@ -1,10 +1,10 @@
 package bot
 
 import (
-	"github.com/Tnze/go-mc/bot/world/entity"
-	"github.com/Tnze/go-mc/chat"
+	"github.com/wildptr/go-mc/bot/world/entity"
+	"github.com/wildptr/go-mc/chat"
 
-	pk "github.com/Tnze/go-mc/net/packet"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 type eventBroker struct {

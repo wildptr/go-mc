@@ -2,11 +2,11 @@ package bot
 
 import (
 	"errors"
-	"github.com/Tnze/go-mc/chat"
+	"github.com/wildptr/go-mc/chat"
 	"strconv"
 
-	"github.com/Tnze/go-mc/data"
-	pk "github.com/Tnze/go-mc/net/packet"
+	"github.com/wildptr/go-mc/data"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 // SwingArm swing player's arm.

@@ -4,9 +4,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/Tnze/go-mc/bot"
-	"github.com/Tnze/go-mc/chat"
-	_ "github.com/Tnze/go-mc/data/lang/en-us"
+	"github.com/wildptr/go-mc/bot"
+	"github.com/wildptr/go-mc/chat"
+	_ "github.com/wildptr/go-mc/data/lang/en-us"
 	//"github.com/mattn/go-colorable" // this package is nice but cannot get in china mainland because it import golang.org/x/sys
 )
 

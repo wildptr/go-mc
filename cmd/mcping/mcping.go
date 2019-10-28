@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Tnze/go-mc/bot"
-	"github.com/Tnze/go-mc/chat"
-	_ "github.com/Tnze/go-mc/data/lang/en-us"
+	"github.com/wildptr/go-mc/bot"
+	"github.com/wildptr/go-mc/chat"
+	_ "github.com/wildptr/go-mc/data/lang/en-us"
 	"github.com/google/uuid"
 )
 

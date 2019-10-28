@@ -79,7 +79,7 @@ func lang(name, hash string, size int64) {
 	// write code
 	_, err = fmt.Fprintf(f,
 		"package %s\n\n"+
-			"import \"github.com/Tnze/go-mc/chat\"\n\n"+
+			"import \"github.com/wildptr/go-mc/chat\"\n\n"+
 			"func init() { chat.SetLanguage(Map) }\n\n"+
 			"var Map = %#v\n",
 		name, LangMap)

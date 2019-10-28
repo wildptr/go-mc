@@ -1,6 +1,6 @@
 package player
 
-import "github.com/Tnze/go-mc/bot/world/entity"
+import "github.com/wildptr/go-mc/bot/world/entity"
 
 // Player includes the player's status.
 type Player struct {

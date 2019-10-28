@@ -1,6 +1,6 @@
 package pt_pt
 
-import "github.com/Tnze/go-mc/chat"
+import "github.com/wildptr/go-mc/chat"
 
 func init() { chat.SetLanguage(Map) }
 

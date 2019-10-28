@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/Tnze/go-mc/data"
-	"github.com/Tnze/go-mc/nbt"
-	pk "github.com/Tnze/go-mc/net/packet"
+	"github.com/wildptr/go-mc/data"
+	"github.com/wildptr/go-mc/nbt"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 //Entity is the entity of minecraft

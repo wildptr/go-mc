@@ -25,7 +25,7 @@ func ExampleUnmarshal() {
 func ExampleMarshal() {
 	var value = struct {
 		Name string `nbt:"name"`
-	}{"Tnze"}
+	}{"wildptr"}
 
 	var buf bytes.Buffer
 	if err := Marshal(&buf, value); err != nil {

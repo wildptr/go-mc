@@ -6,8 +6,8 @@ package bot
 
 import (
 	"fmt"
-	"github.com/Tnze/go-mc/net"
-	pk "github.com/Tnze/go-mc/net/packet"
+	"github.com/wildptr/go-mc/net"
+	pk "github.com/wildptr/go-mc/net/packet"
 )
 
 // ProtocolVersion , the protocol version number of minecraft net protocol

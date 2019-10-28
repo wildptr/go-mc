@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/Tnze/go-mc/yggdrasil"
+	"github.com/wildptr/go-mc/yggdrasil"
 	"os"
 )
 
