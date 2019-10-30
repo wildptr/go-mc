@@ -10,19 +10,19 @@ type World struct {
 	Chunks   map[ChunkLoc]*Chunk
 }
 
-//Chunk store a 256*16*16 clolumn blocks
+// A Chunk is a column of 256*16*16 blocks
 type Chunk struct {
 	sections [16]Section
 }
 
 //Section store a 16*16*16 cube blocks
 type Section struct {
-	blocks [16][16][16]Block
+	blocks [16][16][16]Block // x, y, z
 }
 
 //Block is the base of world
 type Block struct {
-	id uint
+	id uint16
 }
 
 type ChunkLoc struct {
@@ -74,4 +74,18 @@ type ChunkLoc struct {
 //LoadChunk load chunk at (x, z)
 func (w *World) LoadChunk(x, z int, c *Chunk) {
 	w.Chunks[ChunkLoc{X: x, Z: z}] = c
+}
+
+func (w *World) GetChunk(x, z int) *Chunk {
+	return w.Chunks[ChunkLoc{X:x, Z:z}]
+}
+
+func (c *Chunk) GetBlock(x, y, z int) Block {
+	y_lo := y&15
+	y_hi := y>>4
+	return c.sections[y_hi].blocks[x][y_lo][z]
+}
+
+func (b Block) GetState() uint16 {
+	return b.id
 }

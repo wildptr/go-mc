@@ -27,13 +27,13 @@ func DecodeChunkColumn(isFull bool, mask int32, data []byte) (*Chunk, error) {
 			return nil, err
 		}
 		//读调色板
-		var palette []uint
+		var palette []uint16
 		if BitsPerBlock < 9 {
 			var length pk.VarInt
 			if err := length.Decode(r); err != nil {
 				return nil, fmt.Errorf("read palette (id len) fail: %v", err)
 			}
-			palette = make([]uint, length)
+			palette = make([]uint16, length)
 
 			for id := uint(0); id < uint(length); id++ {
 				var stateID pk.VarInt
@@ -41,7 +41,7 @@ func DecodeChunkColumn(isFull bool, mask int32, data []byte) (*Chunk, error) {
 					return nil, fmt.Errorf("read palette (id) fail: %v", err)
 				}
 
-				palette[id] = uint(stateID)
+				palette[id] = uint16(stateID)
 			}
 		}
 
@@ -82,7 +82,7 @@ func perBits(BitsPerBlock byte) uint {
 	}
 }
 
-func fillSection(s *Section, bpb uint, DataArray []int64, palette []uint) {
+func fillSection(s *Section, bpb uint, DataArray []int64, palette []uint16) {
 	mask := uint(1<<bpb - 1)
 	for n := 0; n < 16*16*16; n++ {
 		offset := uint(n * int(bpb))
@@ -97,7 +97,7 @@ func fillSection(s *Section, bpb uint, DataArray []int64, palette []uint) {
 		if bpb < 9 {
 			s.blocks[n%16][n/(16*16)][n%(16*16)/16].id = palette[data]
 		} else {
-			s.blocks[n%16][n/(16*16)][n%(16*16)/16].id = data
+			s.blocks[n%16][n/(16*16)][n%(16*16)/16].id = uint16(data)
 		}
 	}
 }
